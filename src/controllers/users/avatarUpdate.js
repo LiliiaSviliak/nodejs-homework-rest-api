@@ -10,7 +10,7 @@ const avatarDir = path.join (__dirname, "../../", "public/avatars");
 const avatarUpdate = async (req, res) => {
     const { id } = req.params;
     const { path: tmpPath, originalname } = req.file;
-    const uploadPath = path.jpoin(avatarDir, originalname);
+    const uploadPath = path.join(avatarDir, originalname);
     try {
         const file = await Jimp.read(tmpPath);
         await file.resize(255, 255).write(tmpPath)
